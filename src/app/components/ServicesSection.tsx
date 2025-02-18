@@ -18,7 +18,7 @@ const steps = [
 
 export default function ServicesSection() {
   return (
-    <section id="services" className="py-20 bg-beige">
+    <section id="services" className="py-20 bg-light-gray dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-extrabold mb-4">Our 3 Step Service</h2>
@@ -27,17 +27,17 @@ export default function ServicesSection() {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
           {steps.map((step, index) => (
             <div 
               key={step.number}
-              className="relative bg-white p-8 rounded-lg shadow-md"
+              className="relative bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md"
             >
               <div className="absolute -top-6 left-8 bg-yellow text-white text-sm font-medium px-4 py-2 rounded-full">
-                Step
+                Step {step.number}
               </div>
               <div className="mb-6">
-                <span className="text-6xl font-extrabold text-black">{step.number}</span>
+                <span className="text-6xl font-extrabold text-black dark:text-white">{step.number}</span>
               </div>
               <h3 className="text-xl font-medium mb-4">{step.title}</h3>
               <p>{step.description}</p>

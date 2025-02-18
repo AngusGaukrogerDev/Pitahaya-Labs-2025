@@ -1,6 +1,6 @@
 export default function ContactSection() {
   return (
-    <section id="contact" className="py-20 bg-white">
+    <section id="contact" className="py-20 bg-white dark:bg-black">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div className="space-y-6">
@@ -38,23 +38,23 @@ export default function ContactSection() {
               <input
                 type="text"
                 placeholder="First Name"
-                className="w-full px-4 py-3 rounded-lg border border-light-gray focus:outline-none focus:border-yellow"
+                className="w-full px-4 py-3 rounded-lg border border-light-gray dark:border-gray-700 bg-white dark:bg-gray-800 focus:outline-none focus:border-yellow"
               />
               <input
                 type="text"
                 placeholder="Last Name"
-                className="w-full px-4 py-3 rounded-lg border border-light-gray focus:outline-none focus:border-yellow"
+                className="w-full px-4 py-3 rounded-lg border border-light-gray dark:border-gray-700 bg-white dark:bg-gray-800 focus:outline-none focus:border-yellow"
               />
             </div>
             <input
               type="email"
               placeholder="Email Address"
-              className="w-full px-4 py-3 rounded-lg border border-light-gray focus:outline-none focus:border-yellow"
+              className="w-full px-4 py-3 rounded-lg border border-light-gray dark:border-gray-700 bg-white dark:bg-gray-800 focus:outline-none focus:border-yellow"
             />
             <textarea
               placeholder="Your Message"
               rows={6}
-              className="w-full px-4 py-3 rounded-lg border border-light-gray focus:outline-none focus:border-yellow"
+              className="w-full px-4 py-3 rounded-lg border border-light-gray dark:border-gray-700 bg-white dark:bg-gray-800 focus:outline-none focus:border-yellow"
             ></textarea>
             <button className="btn-primary w-full">Send Message</button>
           </form>

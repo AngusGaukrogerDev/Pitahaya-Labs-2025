@@ -1,10 +1,10 @@
 export default function AboutSection() {
   return (
-    <section id="about" className="py-20">
+    <section id="about" className="py-20 min-h-[600px]">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="relative h-[400px]">
-            <div className="absolute inset-0 bg-light-gray rounded-2xl"></div>
+            <div className="absolute inset-0 bg-light-gray dark:bg-black rounded-2xl"></div>
             {/* Add about image here */}
           </div>
           <div className="space-y-6">
