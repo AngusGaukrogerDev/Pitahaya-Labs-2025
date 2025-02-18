@@ -1,11 +1,11 @@
 export default function HeroSection() {
   return (
-    <section className="min-h-screen flex items-center bg-beige pt-20">
+    <section className="min-h-screen flex items-center bg-light-gray pt-20">
       <div className="max-w-7xl mx-auto px-6 py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold">
-              Building the <span className="text-yellow">Future</span> of Technology
+              Building the Future of Technology
             </h1>
             <p className="text-xl">
               We create innovative solutions that transform businesses and enhance user experiences.

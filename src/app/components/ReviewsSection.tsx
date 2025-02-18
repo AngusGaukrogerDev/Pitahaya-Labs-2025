@@ -10,7 +10,7 @@ export default function ReviewsSection() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {[1, 2, 3].map((review) => (
-            <div key={review} className="bg-beige p-6 rounded-lg">
+            <div key={review} className="bg-light-gray p-6 rounded-lg">
               <div className="flex items-center mb-4">
                 <div className="w-12 h-12 bg-yellow rounded-full mr-4"></div>
                 <div>
