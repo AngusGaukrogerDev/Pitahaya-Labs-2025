@@ -15,7 +15,7 @@ export default function HeroSection() {
               <button className="btn-secondary">Learn More</button>
             </div>
           </div>
-          <div className="relative h-[400px] lg:h-[600px]">
+          <div className="relative h-[400px] lg:h-[400px]">
             <div className="absolute inset-0 bg-yellow/10 rounded-2xl"></div>
             {/* Add hero image here */}
           </div>

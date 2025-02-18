@@ -6,12 +6,12 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <Link href="/" className="text-2xl font-extrabold text-yellow">
-          <img
-                    className="cursor-pointer"
-                    width={150}
-                    src="https://store.brth.uk/pitahaya/Pitahaya%20Labs%20-%20Logo%20png.png"
-                    alt="Pitahaya Labs Logo"
-                />
+            <img
+              className="cursor-pointer"
+              width={150}
+              src="https://store.brth.uk/pitahaya/Pitahaya%20Labs%20-%20Logo%20png.png"
+              alt="Pitahaya Labs Logo"
+            />
           </Link>
           
           <div className="hidden md:flex items-center space-x-8">
@@ -20,6 +20,9 @@ export default function Navbar() {
             </Link>
             <Link href="#projects" className="text-black hover:text-yellow transition-colors">
               Projects
+            </Link>
+            <Link href="#services" className="text-black hover:text-yellow transition-colors">
+              Services
             </Link>
             <Link href="#reviews" className="text-black hover:text-yellow transition-colors">
               Reviews
