@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import DarkLogo from './DarkLogo';
+import LightLogo from './LightLogo';
 
 export default function Footer() {
   return (
@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-4">
             <Link href="/" className="text-2xl font-extrabold text-yellow">
-                <DarkLogo width={150} />
+                <LightLogo width={150} />
             </Link>
             <p className="text-white">
               Building the future of technology with innovative solutions.

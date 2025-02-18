@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import DarkLogo from './DarkLogo';
+import LightLogo from './LightLogo';
 import { useState, useEffect } from 'react';
 
 export default function Navbar() {
@@ -29,7 +29,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <Link href="/" className="text-2xl font-extrabold text-yellow">
-            <DarkLogo width={150} />
+            <LightLogo width={150} />
           </Link>
           
           <div className="hidden md:flex items-center space-x-8">

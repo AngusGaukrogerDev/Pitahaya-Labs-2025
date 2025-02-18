@@ -1,7 +1,7 @@
 export default function LightLogo({ width = 150 }: { width?: number }) {
     return (
     <svg width={width} viewBox="0 0 1080 450">
-      <style>{`.st0{fill:#ECBA0B;}.st1{fill:#FFFFFF;}.st2{fill:#1D1D1B;}`}</style>
+      <style>{`.st0{fill:#ECBA0B;}.st1{fill:#FFFFFF;}.st2{fill:#FFFFFF;}`}</style>
       <g>
         <g>
           <g>
