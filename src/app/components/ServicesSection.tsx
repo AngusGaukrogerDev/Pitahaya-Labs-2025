@@ -18,7 +18,7 @@ const steps = [
 
 export default function ServicesSection() {
   return (
-    <section id="services" className="py-20 bg-light-gray dark:bg-gray-900">
+    <section id="services" className="py-20 min-h-[800px] flex items-center justify-center bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-extrabold mb-4">Our 3 Step Service</h2>

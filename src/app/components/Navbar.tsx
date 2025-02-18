@@ -28,7 +28,7 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 right-0 bg-black z-50">
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <Link href="/" className="text-2xl font-extrabold text-yellow">
+          <Link href="#" className="text-2xl font-extrabold text-yellow">
             <LightLogo width={150} />
           </Link>
           

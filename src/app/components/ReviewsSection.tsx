@@ -1,6 +1,6 @@
 export default function ReviewsSection() {
   return (
-    <section id="reviews" className="py-20">
+    <section id="reviews" className="py-20 bg-light-gray min-h-[800px] flex items-center justify-center">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-extrabold mb-4">Client Reviews</h2>
@@ -10,7 +10,7 @@ export default function ReviewsSection() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {[1, 2, 3].map((review) => (
-            <div key={review} className="bg-light-gray p-6 rounded-lg">
+            <div key={review} className="bg-white p-6 rounded-lg">
               <div className="flex items-center mb-4">
                 <div className="w-12 h-12 bg-yellow rounded-full mr-4"></div>
                 <div>

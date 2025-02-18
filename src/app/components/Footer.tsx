@@ -3,7 +3,7 @@ import LightLogo from './LightLogo';
 
 export default function Footer() {
   return (
-    <footer className="bg-black">
+    <footer className="bg-black  py-20">
       <div className="max-w-7xl mx-auto px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-4">
@@ -49,9 +49,7 @@ export default function Footer() {
           <div className="space-y-4">
             <h4 className="text-lg font-medium text-white">Contact</h4>
             <ul className="space-y-2">
-              <li className="text-white">contact@pitahayalabs.com</li>
-              <li className="text-white">+1 (555) 123-4567</li>
-              <li className="text-white">123 Tech Street, San Francisco, CA 94105</li>
+              <li className="text-white">hello@pitahayalabs.com</li>
             </ul>
           </div>
 

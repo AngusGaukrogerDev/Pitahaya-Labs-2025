@@ -51,14 +51,14 @@ export default function ProjectCard() {
       {/* Desktop View */}
       <div className="hidden md:flex bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden h-full">
         {/* Tabs */}
-        <div className="w-40 bg-light-gray dark:bg-gray-900 border-r border-light-gray dark:border-gray-700 flex flex-col">
+        <div className="w-40 bg-white dark:bg-gray-900 border-r border-light-gray dark:border-gray-700 flex flex-col">
           {projects.map((project) => (
             <button
               key={project.id}
               onClick={() => setActiveTab(project.id)}
               className={`h-24 flex items-center justify-center px-6 transition-colors ${
                 activeTab === project.id
-                ? 'bg-white dark:bg-gray-800 border-l-8 border-yellow'
+                ? 'bg-light-gray dark:bg-gray-800 border-l-8 border-yellow'
                 : 'hover:bg-white/50 dark:hover:bg-gray-800/50'
               }`}
             >
