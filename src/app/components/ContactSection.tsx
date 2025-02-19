@@ -1,4 +1,19 @@
+'use client'
+import { useState } from 'react';
+import Link from 'next/link';
+
 export default function ContactSection() {
+  const [privacyAccepted, setPrivacyAccepted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!privacyAccepted) {
+      alert('Please accept the privacy policy to proceed.');
+      return;
+    }
+    // Handle form submission
+  };
+
   return (
     <section id="contact" className="py-20 bg-white min-h-[800px] flex items-center justify-center">
       <div className="max-w-7xl mx-auto px-6">
@@ -22,30 +37,50 @@ export default function ContactSection() {
               </div>
             </div>
           </div>
-          <form className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <input
                 type="text"
                 placeholder="First Name"
-                className="w-full px-4 py-3 rounded-lg border border-light-gray dark:border-gray-700 bg-white dark:bg-gray-800 focus:outline-none focus:border-yellow"
+                required
+                className="w-full px-4 py-3 rounded-lg border border-light-gray bg-white text-black placeholder-mid-gray focus:outline-none focus:border-yellow transition-colors"
               />
               <input
                 type="text"
                 placeholder="Last Name"
-                className="w-full px-4 py-3 rounded-lg border border-light-gray dark:border-gray-700 bg-white dark:bg-gray-800 focus:outline-none focus:border-yellow"
+                required
+                className="w-full px-4 py-3 rounded-lg border border-light-gray bg-white text-black placeholder-mid-gray focus:outline-none focus:border-yellow transition-colors"
               />
             </div>
             <input
               type="email"
               placeholder="Email Address"
-              className="w-full px-4 py-3 rounded-lg border border-light-gray dark:border-gray-700 bg-white dark:bg-gray-800 focus:outline-none focus:border-yellow"
+              required
+              className="w-full px-4 py-3 rounded-lg border border-light-gray bg-white text-black placeholder-mid-gray focus:outline-none focus:border-yellow transition-colors"
             />
             <textarea
               placeholder="Your Message"
               rows={6}
-              className="w-full px-4 py-3 rounded-lg border border-light-gray dark:border-gray-700 bg-white dark:bg-gray-800 focus:outline-none focus:border-yellow"
+              required
+              className="w-full px-4 py-3 rounded-lg border border-light-gray bg-white text-black placeholder-mid-gray focus:outline-none focus:border-yellow transition-colors resize-none"
             ></textarea>
-            <button className="btn-primary w-full">Send Message</button>
+            <div className="flex items-start space-x-3">
+              <input
+                type="checkbox"
+                id="privacy-policy"
+                checked={privacyAccepted}
+                onChange={(e) => setPrivacyAccepted(e.target.checked)}
+                className="mt-1 h-4 w-4 rounded border-light-gray text-yellow focus:ring-yellow focus:ring-offset-0 focus:ring-2 focus:ring-opacity-50 checked:bg-yellow checked:hover:bg-yellow checked:focus:bg-yellow cursor-pointer"
+                required
+              />
+              <label htmlFor="privacy-policy" className="text-sm">
+                I agree to the processing of my data as outlined in the{' '}
+                <Link href="/privacy-policy" className="text-yellow hover:underline">
+                  Privacy Policy
+                </Link>. I understand that I can withdraw my consent at any time.
+              </label>
+            </div>
+            <button type="submit" className="btn-primary w-full">Send Message</button>
           </form>
         </div>
       </div>

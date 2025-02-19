@@ -1,23 +1,22 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { ThemeProvider } from "./context/ThemeContext";
+import PrivacyBanner from "./components/PrivacyBanner";
 
 export const metadata: Metadata = {
   title: "Pitahaya Labs",
-  description: "Pitahaya Labs - Building the future of technology",
+  description: "Empowering businesses with innovative software solutions",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
       <body className="font-poppins antialiased">
-        <ThemeProvider>
-          {children}
-        </ThemeProvider>
+        {children}
+        <PrivacyBanner />
       </body>
     </html>
   );

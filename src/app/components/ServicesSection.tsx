@@ -31,13 +31,13 @@ export default function ServicesSection() {
           {steps.map((step, index) => (
             <div 
               key={step.number}
-              className="relative bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md"
+              className="relative bg-white p-8 rounded-lg shadow-md"
             >
               <div className="absolute -top-6 left-8 bg-yellow text-white text-sm font-medium px-4 py-2 rounded-full">
                 Step {step.number}
               </div>
               <div className="mb-6">
-                <span className="text-6xl font-extrabold text-black dark:text-white">{step.number}</span>
+                <span className="text-6xl font-extrabold text-black">{step.number}</span>
               </div>
               <h3 className="text-xl font-medium mb-4">{step.title}</h3>
               <p>{step.description}</p>

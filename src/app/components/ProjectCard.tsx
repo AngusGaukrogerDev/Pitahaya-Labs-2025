@@ -32,9 +32,9 @@ export default function ProjectCard() {
         {projects.map((project) => (
           <div 
             key={project.id}
-            className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden"
+            className="bg-white rounded-lg shadow-md overflow-hidden"
           >
-            <div className="relative h-48 bg-yellow/10 dark:bg-yellow/5">
+            <div className="relative h-48 bg-yellow/10">
               {/* Add image here */}
             </div>
             <div className="p-6">
@@ -49,17 +49,17 @@ export default function ProjectCard() {
       </div>
 
       {/* Desktop View */}
-      <div className="hidden md:flex bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden h-full">
+      <div className="hidden md:flex h-[600px] bg-white rounded-lg shadow-md overflow-hidden">
         {/* Tabs */}
-        <div className="w-40 bg-white dark:bg-gray-900 border-r border-light-gray dark:border-gray-700 flex flex-col">
+        <div className="w-40 bg-white border-r border-light-gray flex flex-col">
           {projects.map((project) => (
             <button
               key={project.id}
               onClick={() => setActiveTab(project.id)}
               className={`h-24 flex items-center justify-center px-6 transition-colors ${
                 activeTab === project.id
-                ? 'bg-light-gray dark:bg-gray-800 border-l-8 border-yellow'
-                : 'hover:bg-white/50 dark:hover:bg-gray-800/50'
+                ? 'bg-light-gray border-l-8 border-yellow'
+                : 'hover:bg-white/50'
               }`}
             >
               <div className="font-medium text-center">
@@ -74,7 +74,7 @@ export default function ProjectCard() {
           {projects.map((project) => (
             project.id === activeTab && (
               <div key={project.id} className="h-full flex flex-col">
-                <div className="relative flex-1 bg-yellow/10 dark:bg-yellow/5">
+                <div className="relative flex-1 bg-yellow/10">
                   {/* Add image here */}
                 </div>
                 <div className="p-8">

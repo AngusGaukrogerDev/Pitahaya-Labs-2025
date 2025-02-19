@@ -74,11 +74,11 @@ export default function ReviewsSection() {
                 {reviews[currentIndex].name.charAt(0)}
               </div>
               <div>
-                <h4 className="font-medium text-lg sm:text-xl">{reviews[currentIndex].name}</h4>
+                <h4 className="font-medium text-lg sm:text-xl text-black">{reviews[currentIndex].name}</h4>
                 <p className="text-mid-gray text-sm sm:text-base">{reviews[currentIndex].company}</p>
               </div>
             </div>
-            <p className="text-base sm:text-lg mb-4 sm:mb-6 italic">
+            <p className="text-base sm:text-lg mb-4 sm:mb-6 italic text-black">
               "{reviews[currentIndex].review}"
             </p>
             <div className="flex text-yellow">
