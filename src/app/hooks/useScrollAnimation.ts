@@ -1,9 +1,10 @@
-import { useEffect, useRef, RefObject } from 'react';
+import { useEffect, useRef, MutableRefObject } from 'react';
 
-export function useScrollAnimation<T extends HTMLElement>(): RefObject<T> {
+export function useScrollAnimation<T extends HTMLElement = HTMLDivElement>(): MutableRefObject<T | null> {
   const ref = useRef<T>(null);
 
   useEffect(() => {
+    const element = ref.current;
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -19,13 +20,13 @@ export function useScrollAnimation<T extends HTMLElement>(): RefObject<T> {
       }
     );
 
-    if (ref.current) {
-      observer.observe(ref.current);
+    if (element) {
+      observer.observe(element);
     }
 
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
+      if (element) {
+        observer.unobserve(element);
       }
     };
   }, []);

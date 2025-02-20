@@ -12,7 +12,7 @@ export default function ProjectsSection() {
         <div ref={headerRef} className="text-center mb-12 fade-up">
           <h2 className="text-4xl font-extrabold mb-4">Our Projects</h2>
           <p className="text-lg max-w-2xl mx-auto">
-            Discover our latest work and see how we've helped our clients achieve their goals.
+            Discover our latest work and see how we&apos;ve helped our clients achieve their goals.
           </p>
         </div>
         

@@ -96,7 +96,7 @@ export default function PrivacyPolicy() {
               <h2 className="text-2xl font-bold mb-4">8. Updates to This Policy</h2>
               <p className="mb-4">
                 We may update this Privacy Policy from time to time. The updated version will be indicated by an 
-                updated "Last Updated" date and the updated version will be effective as soon as it is accessible.
+                updated &quot;Last Updated&quot; date and the updated version will be effective as soon as it is accessible.
               </p>
               <p className="italic mt-8">Last Updated: {new Date().toLocaleDateString()}</p>
             </section>

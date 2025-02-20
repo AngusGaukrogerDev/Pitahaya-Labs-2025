@@ -82,7 +82,7 @@ export default function ReviewsSection() {
               </div>
             </div>
             <p className="text-base sm:text-lg mb-4 sm:mb-6 italic text-black">
-              "{reviews[currentIndex].review}"
+              &quot;{reviews[currentIndex].review}&quot;
             </p>
             <div className="flex text-yellow">
               {[...Array(reviews[currentIndex].rating)].map((_, i) => (

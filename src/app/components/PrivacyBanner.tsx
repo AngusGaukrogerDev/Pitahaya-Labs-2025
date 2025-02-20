@@ -49,7 +49,7 @@ export default function PrivacyBanner() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="text-sm">
               We use cookies to enhance your browsing experience, serve personalized content, and analyze our traffic. 
-              By clicking "Accept All", you consent to our use of cookies. Read our{' '}
+              By clicking &quot;Accept All&quot;, you consent to our use of cookies. Read our{' '}
               <Link href="/privacy-policy" className="text-yellow hover:underline">
                 Privacy Policy
               </Link>{' '}

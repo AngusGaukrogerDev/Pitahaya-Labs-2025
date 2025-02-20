@@ -20,7 +20,7 @@ export default function CookiePolicy() {
               <h2 className="text-2xl font-bold mb-4">2. How We Use Cookies</h2>
               <p className="mb-4">We use cookies for the following purposes:</p>
               <ul className="list-disc list-inside mb-4 ml-4">
-                <li>To make our website work as you'd expect</li>
+                <li>To make our website work as you&apos;d expect</li>
                 <li>To remember your settings during and between visits</li>
                 <li>To improve the speed/security of the site</li>
                 <li>To allow you to share pages with social networks</li>
@@ -40,13 +40,13 @@ export default function CookiePolicy() {
 
               <h3 className="text-xl font-medium mb-2">3.2 Preferences Cookies</h3>
               <p className="mb-4">
-                Also known as "functionality cookies," these cookies allow a website to remember choices you have made 
+                Also known as &quot;functionality cookies,&quot; these cookies allow a website to remember choices you have made 
                 in the past, like your preferred language or region.
               </p>
 
               <h3 className="text-xl font-medium mb-2">3.3 Statistics Cookies</h3>
               <p className="mb-4">
-                Also known as "performance cookies," these cookies collect information about how you use a website, 
+                Also known as &quot;performance cookies,&quot; these cookies collect information about how you use a website, 
                 like which pages you visited and which links you clicked on.
               </p>
 

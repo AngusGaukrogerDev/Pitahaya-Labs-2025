@@ -1,13 +1,14 @@
 'use client'
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import Link from 'next/link';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 export default function ContactSection() {
   const [privacyAccepted, setPrivacyAccepted] = useState(false);
-  const headerRef = useScrollAnimation<HTMLDivElement>();
-  const contactInfoRef = useScrollAnimation<HTMLDivElement>();
-  const formRef = useScrollAnimation<HTMLFormElement>();
+  const headerRef = useScrollAnimation();
+  const contactInfoRef = useScrollAnimation();
+  const formRef = useRef<HTMLFormElement>(null);
+  const formAnimationRef = useScrollAnimation();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -26,7 +27,7 @@ export default function ContactSection() {
             <div ref={headerRef} className="fade-up">
               <h2 className="text-4xl font-extrabold">Get in Touch</h2>
               <p className="text-lg mt-4">
-                Have a project in mind? Let's talk about how we can help you achieve your goals.
+                Have a project in mind? Let&apos;s talk about how we can help you achieve your goals.
               </p>
             </div>
             <div ref={contactInfoRef} className="space-y-4 fade-up delay-200">
@@ -43,51 +44,53 @@ export default function ContactSection() {
               </div>
             </div>
           </div>
-          <form ref={formRef} onSubmit={handleSubmit} className="space-y-6 fade-up delay-300">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div ref={formAnimationRef} className="fade-up delay-300">
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <input
+                  type="text"
+                  placeholder="First Name"
+                  required
+                  className="w-full px-4 py-3 rounded-lg border border-light-gray bg-white text-black placeholder-mid-gray focus:outline-none focus:border-yellow transition-colors"
+                />
+                <input
+                  type="text"
+                  placeholder="Last Name"
+                  required
+                  className="w-full px-4 py-3 rounded-lg border border-light-gray bg-white text-black placeholder-mid-gray focus:outline-none focus:border-yellow transition-colors"
+                />
+              </div>
               <input
-                type="text"
-                placeholder="First Name"
+                type="email"
+                placeholder="Email Address"
                 required
                 className="w-full px-4 py-3 rounded-lg border border-light-gray bg-white text-black placeholder-mid-gray focus:outline-none focus:border-yellow transition-colors"
               />
-              <input
-                type="text"
-                placeholder="Last Name"
+              <textarea
+                placeholder="Your Message"
+                rows={6}
                 required
-                className="w-full px-4 py-3 rounded-lg border border-light-gray bg-white text-black placeholder-mid-gray focus:outline-none focus:border-yellow transition-colors"
-              />
-            </div>
-            <input
-              type="email"
-              placeholder="Email Address"
-              required
-              className="w-full px-4 py-3 rounded-lg border border-light-gray bg-white text-black placeholder-mid-gray focus:outline-none focus:border-yellow transition-colors"
-            />
-            <textarea
-              placeholder="Your Message"
-              rows={6}
-              required
-              className="w-full px-4 py-3 rounded-lg border border-light-gray bg-white text-black placeholder-mid-gray focus:outline-none focus:border-yellow transition-colors resize-none"
-            ></textarea>
-            <div className="flex items-start space-x-3">
-              <input
-                type="checkbox"
-                id="privacy-policy"
-                checked={privacyAccepted}
-                onChange={(e) => setPrivacyAccepted(e.target.checked)}
-                className="mt-1 h-4 w-4 rounded border-light-gray text-yellow focus:ring-yellow focus:ring-offset-0 focus:ring-2 focus:ring-opacity-50 checked:bg-yellow checked:hover:bg-yellow checked:focus:bg-yellow cursor-pointer"
-                required
-              />
-              <label htmlFor="privacy-policy" className="text-sm">
-                I agree to the processing of my data as outlined in the{' '}
-                <Link href="/privacy-policy" className="text-yellow hover:underline">
-                  Privacy Policy
-                </Link>. I understand that I can withdraw my consent at any time.
-              </label>
-            </div>
-            <button type="submit" className="btn-primary w-full">Send Message</button>
-          </form>
+                className="w-full px-4 py-3 rounded-lg border border-light-gray bg-white text-black placeholder-mid-gray focus:outline-none focus:border-yellow transition-colors resize-none"
+              ></textarea>
+              <div className="flex items-start space-x-3">
+                <input
+                  type="checkbox"
+                  id="privacy-policy"
+                  checked={privacyAccepted}
+                  onChange={(e) => setPrivacyAccepted(e.target.checked)}
+                  className="mt-1 h-4 w-4 rounded border-light-gray text-yellow focus:ring-yellow focus:ring-offset-0 focus:ring-2 focus:ring-opacity-50 checked:bg-yellow checked:hover:bg-yellow checked:focus:bg-yellow cursor-pointer"
+                  required
+                />
+                <label htmlFor="privacy-policy" className="text-sm">
+                  I agree to the processing of my data as outlined in the{' '}
+                  <Link href="/privacy-policy" className="text-yellow hover:underline">
+                    Privacy Policy
+                  </Link>. I understand that I can withdraw my consent at any time.
+                </label>
+              </div>
+              <button type="submit" className="btn-primary w-full">Send Message</button>
+            </form>
+          </div>
         </div>
       </div>
     </section>

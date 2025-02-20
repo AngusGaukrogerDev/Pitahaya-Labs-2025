@@ -23,7 +23,7 @@ export default function Error({
           <h1 className="text-9xl font-extrabold text-yellow mb-4">500</h1>
           <h2 className="text-4xl font-bold mb-6">Something Went Wrong</h2>
           <p className="text-lg text-gray-600 mb-8">
-            We're sorry, but there was an error processing your request.
+            We&apos;re sorry, but there was an error processing your request.
           </p>
           <div className="space-x-4">
             <button onClick={reset} className="btn-primary">
