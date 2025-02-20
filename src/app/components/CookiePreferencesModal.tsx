@@ -30,7 +30,17 @@ export default function CookiePreferencesModal({ isOpen, onClose, onSave }: Cook
       if (savedPreferences) {
         setPreferences(JSON.parse(savedPreferences));
       }
+      // Prevent background scrolling
+      document.body.style.overflow = 'hidden';
+    } else {
+      // Re-enable scrolling when modal closes
+      document.body.style.overflow = 'unset';
     }
+
+    // Cleanup function to ensure we reset the overflow when component unmounts
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
   }, [isOpen]);
 
   const handleSave = () => {
@@ -52,8 +62,14 @@ export default function CookiePreferencesModal({ isOpen, onClose, onSave }: Cook
   const checkboxStyle = "h-5 w-5 rounded border-light-gray text-yellow focus:ring-yellow focus:ring-offset-0 focus:ring-2 focus:ring-opacity-50 checked:bg-yellow checked:hover:bg-yellow checked:focus:bg-yellow cursor-pointer";
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-      <div className="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
+    <div 
+      className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4"
+      onClick={onClose}
+    >
+      <div 
+        className="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto" 
+        onClick={(e) => e.stopPropagation()}
+      >
         <div className="p-6 space-y-6">
           <div className="flex justify-between items-start">
             <h2 className="text-2xl font-extrabold">Cookie Preferences</h2>

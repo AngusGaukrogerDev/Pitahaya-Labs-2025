@@ -1,11 +1,13 @@
 'use client';
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import LightLogo from './LightLogo';
 import { useState, useEffect } from 'react';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     if (isMenuOpen) {
@@ -20,39 +22,84 @@ export default function Navbar() {
     };
   }, [isMenuOpen]);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+  const handleScroll = (elementId: string) => {
+    setIsMenuOpen(false);
+    
+    // If we're on the home page, scroll to the section
+    if (pathname === '/') {
+      const element = document.getElementById(elementId);
+      element?.scrollIntoView({ behavior: 'smooth' });
+      return;
+    }
+    
+    // If we're on another page, navigate to home with the hash
+    window.location.href = `/#${elementId}`;
   };
 
   return (
     <nav className="fixed top-0 left-0 right-0 bg-black z-50">
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <Link href="#" className="text-2xl font-extrabold text-yellow">
+          <Link 
+            href="/" 
+            className="text-2xl font-extrabold text-yellow"
+            onClick={() => {
+              if (pathname === '/') {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }
+            }}
+          >
             <LightLogo width={150} />
           </Link>
           
           <div className="hidden md:flex items-center space-x-8">
-            <Link href="#about" className="text-white hover:text-yellow transition-colors">
+            <Link 
+              href="/"
+              className="text-white hover:text-yellow transition-colors"
+              onClick={(e) => {
+                if (pathname === '/') {
+                  e.preventDefault();
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+              }}
+            >
+              Home
+            </Link>
+            <button 
+              onClick={() => handleScroll('about')} 
+              className="text-white hover:text-yellow transition-colors"
+            >
               About
-            </Link>
-            <Link href="#projects" className="text-white hover:text-yellow transition-colors">
+            </button>
+            <button 
+              onClick={() => handleScroll('projects')} 
+              className="text-white hover:text-yellow transition-colors"
+            >
               Projects
-            </Link>
-            <Link href="#services" className="text-white hover:text-yellow transition-colors">
+            </button>
+            <button 
+              onClick={() => handleScroll('services')} 
+              className="text-white hover:text-yellow transition-colors"
+            >
               Services
-            </Link>
-            <Link href="#reviews" className="text-white hover:text-yellow transition-colors">
+            </button>
+            <button 
+              onClick={() => handleScroll('reviews')} 
+              className="text-white hover:text-yellow transition-colors"
+            >
               Reviews
-            </Link>
-            <Link href="#contact" className="btn-primary">
+            </button>
+            <button 
+              onClick={() => handleScroll('contact')} 
+              className="btn-primary"
+            >
               Contact Us
-            </Link>
+            </button>
           </div>
 
           <div className="md:hidden flex items-center">
             <button 
-              onClick={toggleMenu}
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-white hover:text-yellow transition-colors"
               aria-label="Toggle menu"
             >
@@ -87,40 +134,48 @@ export default function Navbar() {
 
         <div className="flex flex-col items-center justify-center min-h-screen space-y-8 p-6">
           <Link 
-            href="#about" 
+            href="/"
             className="text-white hover:text-yellow transition-colors text-xl"
-            onClick={() => setIsMenuOpen(false)}
+            onClick={(e) => {
+              setIsMenuOpen(false);
+              if (pathname === '/') {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }
+            }}
+          >
+            Home
+          </Link>
+          <button 
+            onClick={() => handleScroll('about')}
+            className="text-white hover:text-yellow transition-colors text-xl"
           >
             About
-          </Link>
-          <Link 
-            href="#projects" 
+          </button>
+          <button 
+            onClick={() => handleScroll('projects')}
             className="text-white hover:text-yellow transition-colors text-xl"
-            onClick={() => setIsMenuOpen(false)}
           >
             Projects
-          </Link>
-          <Link 
-            href="#services" 
+          </button>
+          <button 
+            onClick={() => handleScroll('services')}
             className="text-white hover:text-yellow transition-colors text-xl"
-            onClick={() => setIsMenuOpen(false)}
           >
             Services
-          </Link>
-          <Link 
-            href="#reviews" 
+          </button>
+          <button 
+            onClick={() => handleScroll('reviews')}
             className="text-white hover:text-yellow transition-colors text-xl"
-            onClick={() => setIsMenuOpen(false)}
           >
             Reviews
-          </Link>
-          <Link 
-            href="#contact" 
+          </button>
+          <button 
+            onClick={() => handleScroll('contact')}
             className="btn-primary text-xl"
-            onClick={() => setIsMenuOpen(false)}
           >
             Contact Us
-          </Link>
+          </button>
         </div>
       </div>
     </nav>
