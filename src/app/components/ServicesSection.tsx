@@ -47,7 +47,7 @@ export default function ServicesSection() {
                 }`}
               >
                 <div className="absolute -top-6 left-8 bg-yellow text-white text-sm font-medium px-4 py-2 rounded-full">
-                  Step {step.number}
+                  Step
                 </div>
                 <div className="mb-6">
                   <span className="text-6xl font-extrabold text-black">{step.number}</span>

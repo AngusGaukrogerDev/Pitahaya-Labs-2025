@@ -1,15 +1,39 @@
+'use client'
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import LightLogo from './LightLogo';
 
 export default function Footer() {
+  const pathname = usePathname();
+
+  const handleNavigation = (elementId: string) => {
+    // If we're on the home page, scroll to the section
+    if (pathname === '/') {
+      const element = document.getElementById(elementId);
+      element?.scrollIntoView({ behavior: 'smooth' });
+      return;
+    }
+    
+    // If we're on another page, navigate to home with the hash
+    window.location.href = `/#${elementId}`;
+  };
+
+  const handleLogoClick = () => {
+    if (pathname === '/') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      window.location.href = '/';
+    }
+  };
+
   return (
-    <footer className="bg-black  py-20">
+    <footer className="bg-black py-20">
       <div className="max-w-7xl mx-auto px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-4">
-            <Link href="/" className="text-2xl font-extrabold text-yellow">
-                <LightLogo width={150} />
-            </Link>
+            <button onClick={handleLogoClick} className="text-2xl font-extrabold text-yellow">
+              <LightLogo width={150} />
+            </button>
             <p className="text-white">
               Building the future of technology with innovative solutions.
             </p>
@@ -19,29 +43,34 @@ export default function Footer() {
             <h4 className="text-lg font-medium text-white">Quick Links</h4>
             <ul className="space-y-2">
               <li>
-                <Link href="#about" className="text-white hover:text-yellow transition-colors">
+                <button onClick={handleLogoClick} className="text-white hover:text-yellow transition-colors">
+                  Home
+                </button>
+              </li>
+              <li>
+                <button onClick={() => handleNavigation('about')} className="text-white hover:text-yellow transition-colors">
                   About
-                </Link>
+                </button>
               </li>
               <li>
-                <Link href="#projects" className="text-white hover:text-yellow transition-colors">
+                <button onClick={() => handleNavigation('projects')} className="text-white hover:text-yellow transition-colors">
                   Projects
-                </Link>
+                </button>
               </li>
               <li>
-                <Link href="#services" className="text-white hover:text-yellow transition-colors">
+                <button onClick={() => handleNavigation('services')} className="text-white hover:text-yellow transition-colors">
                   Services
-                </Link>
+                </button>
               </li>
               <li>
-                <Link href="#reviews" className="text-white hover:text-yellow transition-colors">
+                <button onClick={() => handleNavigation('reviews')} className="text-white hover:text-yellow transition-colors">
                   Reviews
-                </Link>
+                </button>
               </li>
               <li>
-                <Link href="#contact" className="text-white hover:text-yellow transition-colors">
+                <button onClick={() => handleNavigation('contact')} className="text-white hover:text-yellow transition-colors">
                   Contact
-                </Link>
+                </button>
               </li>
             </ul>
           </div>
