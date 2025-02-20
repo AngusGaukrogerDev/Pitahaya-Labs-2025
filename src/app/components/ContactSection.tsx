@@ -1,9 +1,13 @@
 'use client'
 import { useState } from 'react';
 import Link from 'next/link';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 export default function ContactSection() {
   const [privacyAccepted, setPrivacyAccepted] = useState(false);
+  const headerRef = useScrollAnimation<HTMLDivElement>();
+  const contactInfoRef = useScrollAnimation<HTMLDivElement>();
+  const formRef = useScrollAnimation<HTMLFormElement>();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -19,11 +23,13 @@ export default function ContactSection() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div className="flex flex-col justify-center space-y-6">
-            <h2 className="text-4xl font-extrabold">Get in Touch</h2>
-            <p className="text-lg">
-              Have a project in mind? Let's talk about how we can help you achieve your goals.
-            </p>
-            <div className="space-y-4">
+            <div ref={headerRef} className="fade-up">
+              <h2 className="text-4xl font-extrabold">Get in Touch</h2>
+              <p className="text-lg mt-4">
+                Have a project in mind? Let's talk about how we can help you achieve your goals.
+              </p>
+            </div>
+            <div ref={contactInfoRef} className="space-y-4 fade-up delay-200">
               <div className="flex items-center space-x-4">
                 <div className="w-12 h-12 bg-yellow rounded-full flex items-center justify-center text-white">
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -37,7 +43,7 @@ export default function ContactSection() {
               </div>
             </div>
           </div>
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form ref={formRef} onSubmit={handleSubmit} className="space-y-6 fade-up delay-300">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <input
                 type="text"

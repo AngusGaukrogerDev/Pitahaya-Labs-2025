@@ -1,5 +1,6 @@
 'use client'
 import { useState } from 'react';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 // Sample reviews data - this can be moved to a separate file or fetched from an API
 const reviews = [
@@ -31,6 +32,8 @@ const reviews = [
 
 export default function ReviewsSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const headerRef = useScrollAnimation();
+  const reviewRef = useScrollAnimation();
 
   const nextReview = () => {
     setCurrentIndex((prevIndex) => 
@@ -47,7 +50,7 @@ export default function ReviewsSection() {
   return (
     <section id="reviews" className="py-20 bg-light-gray min-h-[800px] flex items-center justify-center">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="text-center mb-12">
+        <div ref={headerRef} className="text-center mb-12 fade-up">
           <h2 className="text-4xl font-extrabold mb-4">Client Reviews</h2>
           <p className="text-lg max-w-2xl mx-auto">
             See what our clients have to say about working with us.
@@ -68,7 +71,7 @@ export default function ReviewsSection() {
           </button>
 
           {/* Review Card */}
-          <div className="bg-white rounded-lg shadow-lg p-4 sm:p-8 transition-all duration-300 transform">
+          <div ref={reviewRef} className="bg-white rounded-lg shadow-lg p-4 sm:p-8 transition-all duration-300 transform fade-up delay-200">
             <div className="flex items-center mb-4 sm:mb-6">
               <div className="w-12 h-12 sm:w-16 sm:h-16 bg-yellow rounded-full mr-3 sm:mr-4 flex items-center justify-center text-white text-lg sm:text-xl font-medium">
                 {reviews[currentIndex].name.charAt(0)}
