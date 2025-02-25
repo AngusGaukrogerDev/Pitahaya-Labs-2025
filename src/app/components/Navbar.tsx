@@ -72,10 +72,10 @@ export default function Navbar() {
               About
             </button>
             <button 
-              onClick={() => handleScroll('projects')} 
+              onClick={() => handleScroll('case-studies')} 
               className="text-white hover:text-yellow transition-colors"
             >
-              Projects
+              Case Studies
             </button>
             <button 
               onClick={() => handleScroll('services')} 
@@ -93,7 +93,7 @@ export default function Navbar() {
               onClick={() => handleScroll('contact')} 
               className="btn-primary"
             >
-              Contact Us
+              Get Started
             </button>
           </div>
 
@@ -153,10 +153,10 @@ export default function Navbar() {
             About
           </button>
           <button 
-            onClick={() => handleScroll('projects')}
+            onClick={() => handleScroll('case-studies')}
             className="text-white hover:text-yellow transition-colors text-xl"
           >
-            Projects
+            Case Studies
           </button>
           <button 
             onClick={() => handleScroll('services')}
@@ -174,7 +174,7 @@ export default function Navbar() {
             onClick={() => handleScroll('contact')}
             className="btn-primary text-xl"
           >
-            Contact Us
+            Get Started
           </button>
         </div>
       </div>

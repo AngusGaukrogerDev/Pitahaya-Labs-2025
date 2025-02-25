@@ -17,19 +17,19 @@ export default function AboutSection() {
                 Who We Are
               </h2>
               <p className="text-black text-lg mt-4">
-                Pitahaya Labs is a forward-thinking technology company dedicated to creating innovative solutions 
-                that help businesses thrive in the digital age. Our team of experts combines creativity with 
-                technical excellence to deliver outstanding results.
+                Pitahaya Labs is more than just a Software Agency. We are the technical co-founders you need to take you from a vision, to the fully functional app you
+                need to fill your gap in the market. We guarantee you a high quality product, built using cutting edge technologies all while keeping you in the loop, every step of the way. Take a look at our case studies and reviews to 
+                see how we have transformed our clients' ideas into reality.
               </p>
             </div>
             <div ref={statsRef as React.RefObject<HTMLDivElement>} className="grid grid-cols-2 gap-6 fade-up">
               <div className="space-y-2">
-                <h4 className="text-xl font-medium text-yellow">100+</h4>
-                <p>Projects Completed</p>
+                <h4 className="text-xl font-medium text-yellow">6+</h4>
+                <p>Years of Experience</p>
               </div>
               <div className="space-y-2">
-                <h4 className="text-xl font-medium text-yellow">50+</h4>
-                <p>Happy Clients</p>
+                <h4 className="text-xl font-medium text-yellow">10+</h4>
+                <p>Projects Completed</p>
               </div>
             </div>
           </div>

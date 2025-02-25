@@ -19,10 +19,10 @@ export default function HeroSection() {
           <div className="space-y-6 text-center lg:text-left">
             <div ref={contentRef} className="fade-up">
               <h1 className="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold">
-                Building the Future of Technology
+                Bring Your App Idea To Life
               </h1>
               <p className="text-white text-lg sm:text-xl mt-4">
-                We create innovative solutions that transform businesses and enhance user experiences.
+                Complete Development Services For Non-Technical Startup Founders. From The Dev Team That Works With You To Understand Your Vision. 
               </p>
             </div>
             <div ref={buttonsRef} className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start fade-up">

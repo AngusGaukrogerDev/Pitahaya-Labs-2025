@@ -9,6 +9,12 @@ const nextConfig = {
         pathname: '/pitahaya/**',
         search: '',
       },
+      {
+        protocol: 'https',
+        hostname: 'dirti.co',
+        port: '',
+        pathname: '/**',
+      },
     ],
   },
 }

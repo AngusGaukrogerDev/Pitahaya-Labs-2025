@@ -1,22 +1,24 @@
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
 import HeroSection from './components/HeroSection';
 import AboutSection from './components/AboutSection';
-import ProjectsSection from './components/ProjectsSection';
-import ReviewsSection from './components/ReviewsSection';
+import CaseStudiesSection from './components/CaseStudiesSection';
 import ServicesSection from './components/ServicesSection';
+import ReviewsSection from './components/ReviewsSection';
 import ContactSection from './components/ContactSection';
+import Footer from './components/Footer';
+import Navbar from './components/Navbar';
 
 export default function Home() {
   return (
     <>
       <Navbar />
-      <HeroSection />
-      <AboutSection />
-      <ProjectsSection />
-      <ServicesSection />
-      <ReviewsSection />
-      <ContactSection />
+      <main>
+        <HeroSection />
+        <AboutSection />
+        <CaseStudiesSection />
+        <ServicesSection />
+        <ReviewsSection />
+        <ContactSection />
+      </main>
       <Footer />
     </>
   );

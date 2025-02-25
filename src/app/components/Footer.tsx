@@ -52,8 +52,8 @@ export default function Footer() {
                 </button>
               </li>
               <li>
-                <button onClick={() => handleNavigation('projects')} className="text-white hover:text-yellow transition-colors">
-                  Projects
+                <button onClick={() => handleNavigation('case-studies')} className="text-white hover:text-yellow transition-colors">
+                  Case Studies
                 </button>
               </li>
               <li>
