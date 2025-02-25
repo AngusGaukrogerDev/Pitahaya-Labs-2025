@@ -19,7 +19,7 @@ export default function AboutSection() {
               <p className="text-black text-lg mt-4">
                 Pitahaya Labs is more than just a Software Agency. We are the technical co-founders you need to take you from a vision, to the fully functional app you
                 need to fill your gap in the market. We guarantee you a high quality product, built using cutting edge technologies all while keeping you in the loop, every step of the way. Take a look at our case studies and reviews to 
-                see how we have transformed our clients' ideas into reality.
+                see how we have transformed our clients&apos; ideas into reality.
               </p>
             </div>
             <div ref={statsRef as React.RefObject<HTMLDivElement>} className="grid grid-cols-2 gap-6 fade-up">
