@@ -22,7 +22,7 @@ export default function HeroSection() {
                 Bring Your App Idea To Life
               </h1>
               <p className="text-white text-lg sm:text-xl mt-4">
-                Complete Development Services For Non-Technical Startup Founders. From The Dev Team That Works With You To Understand Your Vision. 
+                Complete Development Services For Non-Technical Startup Founders.
               </p>
             </div>
             <div ref={buttonsRef} className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start fade-up">
